@@ -13,10 +13,12 @@
         <h1>Decibel Alert</h1>
         <p>Warns Melissa to be quieter while she plays at Valorant.<br>
         If she gets her laptop taken again I will be very sad :(</p>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="65" class="slider" id="volume-slider">
+        </div>
         <div id="volume-visualizer">
             <div id="volume-visualizer-bar"></div>
-            <div id="volume-visualizer-indicator" style="left:85%"></div>
-            <div id="volume-visualizer-indicator" style="left:65%"></div>
+            <div id="volume-visualizer-indicator"></div>
         </div>
         <button id="start">Start</button>
         <button id="stop">Stop</button>

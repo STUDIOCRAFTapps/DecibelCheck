@@ -1,5 +1,12 @@
-var alert1Sound;
-var alert2Sound;
+var alertSound;
+var slider = document.getElementById("volume-slider");
+var indicator = document.getElementById("volume-visualizer-indicator");
+var volumeLimit = 85;
+
+slider.oninput = function() {
+  volumeLimit = this.value;
+  indicator.style.left = volumeLimit + '%';
+}
 
 function sound(src) {
     this.sound = document.createElement("audio");
@@ -17,8 +24,9 @@ function sound(src) {
 }
 
 (function () {
-    alert1Sound = new sound("alert1.wav");
-    alert2Sound = new sound("alert2.wav");
+    alertSound = new sound("alert2.wav");
+    slider.value = volumeLimit;
+    indicator.style.left = volumeLimit + '%';
 })();
 
 (async () => {
@@ -53,11 +61,8 @@ function sound(src) {
         const averageVolume = volumeSum / volumes.length;
         const percentVolume = averageVolume * 100 / 127
         // Value range: 127 = analyser.maxDecibels - analyser.minDecibels;
-        if(percentVolume > 85) {
-            alert2Sound.play();
-            volumeVisualizer.style.setProperty('--bar-color', 'red');
-        } else if(percentVolume > 65) {
-            alert1Sound.play();
+        if(percentVolume > volumeLimit) {
+            alertSound.play();
             volumeVisualizer.style.setProperty('--bar-color', 'red');
         } else {
             volumeVisualizer.style.setProperty('--bar-color', '#b202ac');

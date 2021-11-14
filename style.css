@@ -38,6 +38,9 @@ button {
     border-radius: 10px;
     color: white;
 }
+button:hover {
+    background-color: #e23edd;
+}
 
 #volume-visualizer {
     --volume: 0%;
@@ -68,3 +71,45 @@ button {
     width: 1px;
     background-color: red;
 }
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+    
+}
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #580ba3;
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height: 10px; /* Slider handle height */
+    border-radius: 2em;
+    background: red; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 10px; /* Set a specific slider handle width */
+    height: 10px; /* Slider handle height */
+    border-radius: 2em;
+    background: red; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
