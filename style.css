@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+  background: linear-gradient(345deg, rgba(14,19,156,1) 0%, rgba(194,0,174,1) 100%);
+  margin: 0;
+  font-family: "Poppins";
+  color: fuchsia;
+}
+
+.center-wrap {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.container {
+    margin: auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 1em;
+    width: fit-content;
+}
+
+h1 {
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+button {
+    background-color: #b202ac;
+    text-decoration: none;
+    border: none;
+    padding: 3px 12px 3px 12px;
+    margin-right: 4px;
+    border-radius: 10px;
+    color: white;
+}
+
+#volume-visualizer {
+    --volume: 0%;
+    position: relative;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #580ba3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+  
+#volume-visualizer-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: var(--volume);
+    /*background-color: var(--bar-color);*/
+    background: linear-gradient(0deg, rgba(255,0,0,0) 0%, var(--bar-color));
+    transition: width 50ms linear;
+}
+
+#volume-visualizer-indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: red;
+}
